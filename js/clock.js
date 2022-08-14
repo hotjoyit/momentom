@@ -1,11 +1,11 @@
-const clock = document.querySelector("h2#clock");
+const clock = document.querySelector("#clock");
 
 function getClock() {
   const date = new Date();
   const hours = date.getHours().toString();
   const minutes = date.getMinutes().toString();
   const seconds = date.getSeconds().toString();
-  clock.innerText = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+  clock.innerText = `${pad(hours)} : ${pad(minutes)} : ${pad(seconds)}`;
 }
 
 function pad(num) {

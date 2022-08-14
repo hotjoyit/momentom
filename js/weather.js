@@ -6,11 +6,13 @@ function geoSuccess(position) {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      const city = document.querySelector("#weather span:first-child");
-      const weather = document.querySelector("#weather span:last-child");
+      const weather_info = document.querySelector("#weather p:first-child");
+      const temperature = document.querySelector("#weather p:nth-child(2)");
+      const city = document.querySelector("#weather p:last-child");
 
+      weather_info.innerText = `${data.weather[0].main}`;
+      temperature.innerText = `${data.main.temp}°C`;
       city.innerText = data.name;
-      weather.innerText = `${data.weather[0].main} ${data.main.temp}도`;
     });
 }
 
